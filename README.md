@@ -12,7 +12,7 @@ horse : caballo
 
 You will likely need to use a few different Python packages to acomplish this ask, and part of the fun is seeing which ones you pick. The point of this exercise is for you to show us what good software development looks like and what you are interested in. 
 
-You are free to extend any piece of this ask to put your best foot forward and show us what you got. Are you a test finatic? Show us your TDD process. Are you crazy for optimization? Show us how fast your code runs when you pull in 100,000,000 posts. Do you love architecture? Include files to show us how you would deploy this to a cloud provider. What would you change if we needed to support multiple languages? Would you write to a database instead of a file? 
+You are free to extend any piece of this ask to put your best foot forward and show us what you got. Are you a test finatic? Show us your TDD process. Are you crazy for optimization? Show us how fast your code runs when you pull in 100,000,000 posts. Do you love architecture? Include files to show us how you would deploy this to a cloud provider. What would you change if we needed to support multiple languages? Would you write to a database instead of a file? These are just some examples of what you could focus on. 
 
 
 Some things we'll be on the look out for. How is your project laid out? How is your code laid out? What does your Git history look like? Did you include tests? How easy was it for us to install and run your project? 

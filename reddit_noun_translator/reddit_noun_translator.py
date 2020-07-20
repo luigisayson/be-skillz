@@ -81,13 +81,18 @@ class RedditNounTranslator:
     @log_elapsed_time
     def make_translated_noun_pairs(self, nouns: Iterable[str]) -> List[Tuple[str, str]]:
         """
+        First concatenate all the nouns with a newline char in between, translate the blob, then return a list of
+        english words paired with their translation. The concatenation part is done so that each line gets translated
+        separately and the meaning of each isn't changed, and that only one request is sent to Google's API.
         Args:
             nouns (Iterable(str)): An iterable of strings that are nouns
 
         Returns:
             (list(str, str)) A list of tuples with the first item being the english word, and the second the translation
         """
-        return [(noun, self.translator.translate(noun, src='en', dest=self.target_language).text) for noun in nouns]
+        joined_nouns = '\n'.join(nouns)
+        translated = self.translator.translate(joined_nouns, src='en', dest=self.target_language)
+        return list(zip(nouns, translated.text.split('\n')))
 
     @log_elapsed_time
     def write_pairs_to_output_file(self, pairs: Sequence[Tuple[str, str]]) -> None:
@@ -113,7 +118,7 @@ class RedditNounTranslator:
         Returns:
             True if pos is NN or NNS, False otherwise
         """
-        return pos in {'NN', 'NNS'}
+        return pos in {'NN', 'NNS'}  # Couldn't find global constants in nltk for these
 
     @staticmethod
     def is_english_word(word: str) -> bool:

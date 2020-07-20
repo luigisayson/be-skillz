@@ -90,9 +90,10 @@ class RedditNounTranslator:
         Returns:
             (list(str, str)) A list of tuples with the first item being the english word, and the second the translation
         """
-        joined_nouns = '\n'.join(nouns)
+        sequence_of_nouns = list(nouns)
+        joined_nouns = '\n'.join(sequence_of_nouns)
         translated = self.translator.translate(joined_nouns, src='en', dest=self.target_language)
-        return list(zip(nouns, translated.text.split('\n')))
+        return list(zip(sequence_of_nouns, translated.text.split('\n')))
 
     @log_elapsed_time
     def write_pairs_to_output_file(self, pairs: Sequence[Tuple[str, str]]) -> None:

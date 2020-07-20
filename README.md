@@ -1,4 +1,4 @@
-
+Grabs a number of posts from Reddit, extracts the nouns, and writes them to a file along with their translation
 
 Quick Start
 -----------
@@ -16,7 +16,7 @@ The file should contain only these lines:
 }
 ```
 
-How To Run 
+Usage
 ----------
 Once that's done you can start running stuff:
 
@@ -31,12 +31,11 @@ Details about options:
 usage: python -m reddit_noun_translator.reddit_noun_translator [-h] [-c] [-l] [-n] [-o]
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -c , --credentials    path to Reddit API credentials file.
-  -l , --target_language
-                        language to translate the nouns to
-  -n , --num_posts      number of posts to use
-  -o , --output-file    Path to output file
+  -h, --help              show this help message and exit
+  -c , --credentials      path to Reddit API credentials file.
+  -l , --target_language  language to translate the nouns to
+  -n , --num_posts        number of posts to use
+  -o , --output-file      Path to output file
 ```
 
 Running Tests

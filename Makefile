@@ -1,4 +1,5 @@
-tests:
+.PHONY: test
+test:
 	python -m tests.test_reddit_noun_translator
 
 default-run:

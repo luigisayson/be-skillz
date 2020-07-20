@@ -1,0 +1,17 @@
+#Secrets
+keys/
+
+#Log Files
+*.log
+
+#outputs
+temp/
+output.txt
+
+#ide
+.idea
+
+# OS, python stuff
+*.pyc
+.DS_Store
+.pytest_cache
